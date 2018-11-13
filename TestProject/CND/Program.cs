@@ -3,21 +3,26 @@ using System.IO;
 
 namespace CND
 {
-    class Program
+   public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("CND");
+        }
+
+
+        public static void SaveFile(string fileName, byte[] byes)
+        {
+            File.WriteAllBytes($@"C:\Users\Peter\Desktop\Octodiff test\TestProject\CND\Games\{fileName}", byes);
         }
 
         public static byte[] GetFile(string fileName)
         {
-            if (File.Exists($@"C:\Users\Peter\Desktop\Octodiff test\Octodiff\FakeAws\Games\{fileName}"))
+            if (File.Exists($@"C:\Users\Peter\Desktop\Octodiff test\TestProject\CND\Games\{fileName}"))
                 return File.ReadAllBytes(
-                    $@"C:\Users\Peter\Desktop\Octodiff test\Octodiff\FakeAws\Games\{fileName}");
+                    $@"C:\Users\Peter\Desktop\Octodiff test\TestProject\CND\Games\{fileName}");
 
             return null;
         }
-    }
     }
 }
